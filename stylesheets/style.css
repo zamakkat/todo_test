@@ -11,18 +11,19 @@ body {
     z-index: 3;
     width: 25px;
     border-left: none;
-    border-right: solid 1px #f1e4e4; }
+    border-right: solid 2px #efe2e2; }
   #todoapp #header {
     padding-top: 50px; }
     #todoapp #header:before {
-      height: 50px; }
+      height: 50px;
+      z-index: 4; }
 
 #main {
   border-top: none; }
   #main #todo-list .completed label {
     color: #a9a9a9;
     text-decoration: line-through;
-    font-weight: normal; }
+    font-weight: normal !important; }
   #main #todo-list .hoverOn label {
     color: #a9a9a9;
     text-decoration: line-through;
@@ -35,8 +36,8 @@ body {
       left: 65px; }
     #main #todo-list li .view label {
       font-weight: bold;
-      font-size: 14px;
-      padding: 5px 60px 5px 15px; }
+      font-size: 16px;
+      padding: 12px 60px 12px 15px; }
     #main #todo-list li .destroy {
       position: absolute;
       top: 0;
@@ -45,12 +46,12 @@ body {
       width: 20px;
       height: 20px;
       margin: auto 0;
-      font-size: 12px;
+      font-size: 18px;
       color: #a88a8a;
       -webkit-transition: all 0.2s;
       transition: all 0.2s; }
   #main #new-todo-area {
-    height: 60px;
+    height: 70px;
     background-color: white;
     border-radius: 3px; }
     #main #new-todo-area #make-todo {
@@ -58,25 +59,28 @@ body {
       top: 10px;
       left: 80px;
       width: 80%;
+      font-size: 16px;
+      font-weight: bold;
       text-color: #c8bca8;
       text-align: left;
-      padding: 5px 5px 5px 3px;
+      padding: 5px 5px 5px 10px;
       background: #fefaef;
       border: solid 1px #c8bca8;
       border-radius: 3px;
       z-index: 2;
       box-shadow: none; }
       #main #new-todo-area #make-todo #pen-icon {
-        width: 10px;
-        height: 10px; }
+        padding-right: 5px;
+        width: 12px;
+        height: 12px; }
     #main #new-todo-area #new-todo, #main #new-todo-area .edit {
       box-shadow: none;
       margin-top: 10px;
-      font-size: 14px; }
+      font-size: 16px; }
     #main #new-todo-area #new-todo {
       left: 80px;
       width: 80%;
-      padding: 5px 5px 5px 20px;
+      padding: 5px 5px 5px 35px;
       border: solid 1px #ECEDEF;
       border-radius: 3px;
       background-color: white;
@@ -84,6 +88,7 @@ body {
       box-shadow: none; }
 
 #lists {
+  font-size: 15px;
   color: #FFF;
   padding: 0 15px;
   position: absolute;
@@ -118,7 +123,7 @@ body {
     line-height: 20px;
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1);
-    font-size: 11px;
+    font-size: 12px;
     padding: 0 10px;
     border-radius: 3px;
     box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2); }
