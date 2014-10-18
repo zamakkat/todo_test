@@ -58,22 +58,20 @@ var app = app || {};
 			var completed = app.todos.completed().length;
 			var remaining = app.todos.remaining().length;
 
-			if (app.todos.length) {
-				this.$main.show();
-				this.$lists.show();
+			this.$main.show();
+			this.$lists.show();
 
-				this.$lists.html(this.statsTemplate({
-					completed: completed,
-					remaining: remaining
-				}));
+			this.$lists.html(this.statsTemplate({
+				completed: completed,
+				remaining: remaining
+			}));
+
+			if (app.todos.length) {
 
 				this.$('#filters li a')
 					.removeClass('selected')
 					.filter('[href="#/' + (app.TodoFilter || '') + '"]')
 					.addClass('selected');
-			} else {
-				this.$main.hide();
-				this.$lists.hide();
 			}
 
 			// this.allCheckbox.checked = !remaining;
