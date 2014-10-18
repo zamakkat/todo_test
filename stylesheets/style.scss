@@ -1,5 +1,226 @@
+
 $bg-color: #e9eef4;
 
 body {
 	background: $bg-color;
+}
+
+$gutter-width: 25px;
+$toggle-width: 15px;
+
+#todoapp {
+	&:before {
+		position: absolute;
+		z-index: 3;
+		width: $gutter-width;
+		border-left: none;
+		border-right: solid 1px #f1e4e4;
+	}
+	border-radius: 5px;
+	border: solid 1px #b5b9c2;
+	border-top: none;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),
+				0 20px 20px 0 rgba(0, 0, 0, 0.15);
+
+	#header {
+		&:before {
+			height: 50px;
+		}
+
+		padding-top: 50px;
+
+	}
+}
+
+
+
+#main {
+	border-top: none;
+	#todo-list {
+		.completed label {
+			color: #a9a9a9;
+			text-decoration: line-through;
+			font-weight: normal;
+		}
+		.hoverOn label {
+			color: #a9a9a9;
+			text-decoration: line-through;
+			font-weight: bold;
+		}
+
+		li {
+			background-color: white;
+			padding-left: $gutter-width + $toggle-width;
+			border-bottom: 1px solid #ecedef;
+
+			.view {
+				input.toggle {
+					left: 2*$gutter-width + $toggle-width;
+				}
+
+				label {
+					font-weight: bold;
+					font-size: 14px;
+					padding: 5px 60px 5px 15px;
+				}
+			}
+
+			.destroy {
+				position: absolute;
+				top: 0;
+				right: 10px;
+				bottom: 0;
+				width: 20px;
+				height: 20px;
+				margin: auto 0;
+				font-size: 12px;
+				color: #a88a8a;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;
+			}
+		}
+	}
+
+	#new-todo-area {
+		height: 60px;
+		background-color: white;
+
+		#make-todo {
+			#pen-icon {
+				width: 10px;
+				height: 10px;
+			}
+
+			position: relative;
+			top: 10px;
+			left: 2*($gutter-width + $toggle-width);
+			width: 80%;
+			text-color: #c8bca8;
+			text-align: left;
+			padding: 5px 5px 5px 3px;
+			background: #fefaef;
+			border: solid 1px #c8bca8;
+			border-radius: 3px;
+			z-index: 2;
+			box-shadow: none;
+		}
+
+		#new-todo, .edit {
+			box-shadow: none;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+
+		#new-todo {
+			left: 2*($gutter-width + $toggle-width);
+			width: 80%;
+			padding: 5px 5px 5px 20px;
+			border: solid 1px #ECEDEF;
+			border-radius: 3px;
+			background-color: white;
+			z-index: 2;
+			box-shadow: none;
+		}
+	}
+}
+
+
+#lists {
+	color: #FFF;
+	padding: 0 15px;
+	position: absolute;
+	right: 0;
+	top: 15px;
+	left: 0;
+	height: 20px;
+	z-index: 4;
+	text-align: center;
+
+	#todo-count {
+		margin-left: 2*$gutter-width + $toggle-width;
+		float: left;
+		text-align: left;
+	}
+
+	#filters {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		right: 0;
+		left: 0;
+	}
+
+	#filters li {
+		display: inline;
+	}
+
+	#filters li a {
+		color: white;
+		margin: 2px;
+		text-decoration: none;
+	}
+
+	#filters li a.selected {
+		font-weight: bold;
+	}
+
+	#clear-completed {
+		float: right;
+		position: relative;
+		line-height: 20px;
+		text-decoration: none;
+		background: rgba(0, 0, 0, 0.1);
+		font-size: 11px;
+		padding: 0 10px;
+		border-radius: 3px;
+		box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+	}
+
+	#clear-completed:hover {
+		background: rgba(0, 0, 0, 0.15);
+		box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+	}
+}
+
+/*#lists:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 31px;
+	left: 0;
+	height: 50px;
+	z-index: -1;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
+				0 6px 0 -3px rgba(255, 255, 255, 0.8),
+				0 7px 1px -3px rgba(0, 0, 0, 0.3),
+				0 43px 0 -6px rgba(255, 255, 255, 0.8),
+				0 44px 2px -6px rgba(0, 0, 0, 0.2);
+}*/
+
+
+
+#pages {
+	color: #777;
+	position: absolute;
+	right: 0;
+	bottom: -31px;
+	left: 0;
+	z-index: 1;
+}
+
+#pages:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 31px;
+	left: 0;
+	height: 50px;
+	z-index: -1;
+	border-radius: 3px;
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3),
+				0 2.5px 0 -0.5px rgba(255, 255, 255, 0.8),
+				0 3.5px 1px -0.5px rgba(0, 0, 0, 0.3),
+				0 5px 0 -1px rgba(255, 255, 255, 0.8),
+				0 6px 2px -1px rgba(0, 0, 0, 0.2);
 }

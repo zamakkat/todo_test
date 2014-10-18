@@ -22,6 +22,7 @@ var app = app || {};
 			'click #make-todo': 'showInputBox',
 			'keypress #new-todo': 'createOnEnter',
 			'keydown #new-todo': 'cancelOnEscape',
+			'blur #new-todo': 'cancelOnBlur',
 			'click #clear-completed': 'clearCompleted'
 			// 'click #toggle-all': 'toggleAllComplete'
 		},
@@ -33,7 +34,7 @@ var app = app || {};
 			// this.allCheckbox = this.$('#toggle-all')[0];
 			this.$make = this.$('#make-todo');
 			this.$input = this.$('#new-todo');
-			this.$footer = this.$('#footer');
+			this.$lists = this.$('#lists');
 			this.$main = this.$('#main');
 			this.$list = $('#todo-list');
 
@@ -59,9 +60,9 @@ var app = app || {};
 
 			if (app.todos.length) {
 				this.$main.show();
-				this.$footer.show();
+				this.$lists.show();
 
-				this.$footer.html(this.statsTemplate({
+				this.$lists.html(this.statsTemplate({
 					completed: completed,
 					remaining: remaining
 				}));
@@ -72,7 +73,7 @@ var app = app || {};
 					.addClass('selected');
 			} else {
 				this.$main.hide();
-				this.$footer.hide();
+				this.$lists.hide();
 			}
 
 			// this.allCheckbox.checked = !remaining;
@@ -130,12 +131,18 @@ var app = app || {};
 			}
 		},
 
-		// Cancels the current input of a new todo and show the default button
+		// Cancel the current input of a new todo and show the default button on Esc
 		cancelOnEscape: function (e) {
 			if (e.which === ESC_KEY) {
 				this.$make.show();
 				this.$input.hide();
 			}
+		},
+
+		// Cancel the current input of a new todo and show the default button on blur
+		cancelOnBlur: function () {
+			this.$make.show();
+			this.$input.hide();
 		},
 
 		// Clear all completed todo items, destroying their models.

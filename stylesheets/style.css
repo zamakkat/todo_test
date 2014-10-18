@@ -1,4 +1,161 @@
 body {
   background: #e9eef4; }
 
+#todoapp {
+  border-radius: 5px;
+  border: solid 1px #b5b9c2;
+  border-top: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.15); }
+  #todoapp:before {
+    position: absolute;
+    z-index: 3;
+    width: 25px;
+    border-left: none;
+    border-right: solid 1px #f1e4e4; }
+  #todoapp #header {
+    padding-top: 50px; }
+    #todoapp #header:before {
+      height: 50px; }
+
+#main {
+  border-top: none; }
+  #main #todo-list .completed label {
+    color: #a9a9a9;
+    text-decoration: line-through;
+    font-weight: normal; }
+  #main #todo-list .hoverOn label {
+    color: #a9a9a9;
+    text-decoration: line-through;
+    font-weight: bold; }
+  #main #todo-list li {
+    background-color: white;
+    padding-left: 40px;
+    border-bottom: 1px solid #ecedef; }
+    #main #todo-list li .view input.toggle {
+      left: 65px; }
+    #main #todo-list li .view label {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 5px 60px 5px 15px; }
+    #main #todo-list li .destroy {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      margin: auto 0;
+      font-size: 12px;
+      color: #a88a8a;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s; }
+  #main #new-todo-area {
+    height: 60px;
+    background-color: white; }
+    #main #new-todo-area #make-todo {
+      position: relative;
+      top: 10px;
+      left: 80px;
+      width: 80%;
+      text-color: #c8bca8;
+      text-align: left;
+      padding: 5px 5px 5px 3px;
+      background: #fefaef;
+      border: solid 1px #c8bca8;
+      border-radius: 3px;
+      z-index: 2;
+      box-shadow: none; }
+      #main #new-todo-area #make-todo #pen-icon {
+        width: 10px;
+        height: 10px; }
+    #main #new-todo-area #new-todo, #main #new-todo-area .edit {
+      box-shadow: none;
+      margin-top: 10px;
+      font-size: 14px; }
+    #main #new-todo-area #new-todo {
+      left: 80px;
+      width: 80%;
+      padding: 5px 5px 5px 20px;
+      border: solid 1px #ECEDEF;
+      border-radius: 3px;
+      background-color: white;
+      z-index: 2;
+      box-shadow: none; }
+
+#lists {
+  color: #FFF;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  left: 0;
+  height: 20px;
+  z-index: 4;
+  text-align: center; }
+  #lists #todo-count {
+    margin-left: 65px;
+    float: left;
+    text-align: left; }
+  #lists #filters {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    left: 0; }
+  #lists #filters li {
+    display: inline; }
+  #lists #filters li a {
+    color: white;
+    margin: 2px;
+    text-decoration: none; }
+  #lists #filters li a.selected {
+    font-weight: bold; }
+  #lists #clear-completed {
+    float: right;
+    position: relative;
+    line-height: 20px;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    padding: 0 10px;
+    border-radius: 3px;
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2); }
+  #lists #clear-completed:hover {
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3); }
+
+/*#lists:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 31px;
+	left: 0;
+	height: 50px;
+	z-index: -1;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
+				0 6px 0 -3px rgba(255, 255, 255, 0.8),
+				0 7px 1px -3px rgba(0, 0, 0, 0.3),
+				0 43px 0 -6px rgba(255, 255, 255, 0.8),
+				0 44px 2px -6px rgba(0, 0, 0, 0.2);
+}*/
+#pages {
+  color: #777;
+  position: absolute;
+  right: 0;
+  bottom: -31px;
+  left: 0;
+  z-index: 1; }
+
+#pages:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 31px;
+  left: 0;
+  height: 50px;
+  z-index: -1;
+  border-radius: 3px;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3), 0 2.5px 0 -0.5px rgba(255, 255, 255, 0.8), 0 3.5px 1px -0.5px rgba(0, 0, 0, 0.3), 0 5px 0 -1px rgba(255, 255, 255, 0.8), 0 6px 2px -1px rgba(0, 0, 0, 0.2); }
+
 /*# sourceMappingURL=style.css.map */

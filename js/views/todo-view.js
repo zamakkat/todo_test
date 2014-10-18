@@ -17,6 +17,8 @@ var app = app || {};
 
 		// The DOM events specific to an item.
 		events: {
+			'mouseenter .toggle': 'hoverIn',
+			'mouseleave .toggle': 'hoverOut',
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
@@ -65,6 +67,24 @@ var app = app || {};
 				(!isCompleted && app.TodoFilter === 'completed') ||
 				(isCompleted && app.TodoFilter === 'active')
 			);
+		},
+
+		// 
+		hoverIn: function () {
+			if (!this.$el.hasClass('hoverOn')) {
+				this.$el.addClass('hoverOn');
+			} else {
+				this.$el.removeClass('hoverOn');
+			}	
+		},
+		// 
+		hoverOut: function () {
+			if (this.$el.hasClass('hoverOn')) {
+					this.$el.removeClass('hoverOn');
+				} else {
+					this.$el.addClass('hoverOn');
+				}
+				
 		},
 
 		// Toggle the `"completed"` state of the model.
