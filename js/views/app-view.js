@@ -19,20 +19,24 @@ var app = app || {};
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
+			'click #make-todo': 'showInputBox',
 			'keypress #new-todo': 'createOnEnter',
-			'click #clear-completed': 'clearCompleted',
-			'click #toggle-all': 'toggleAllComplete'
+			'click #clear-completed': 'clearCompleted'
+			// 'click #toggle-all': 'toggleAllComplete'
 		},
 
 		// At initialization we bind to the relevant events on the `Todos`
 		// collection, when items are added or changed. Kick things off by
 		// loading any preexisting todos that might be saved in *localStorage*.
 		initialize: function () {
-			this.allCheckbox = this.$('#toggle-all')[0];
+			// this.allCheckbox = this.$('#toggle-all')[0];
+			this.$make = this.$('#make-todo');
 			this.$input = this.$('#new-todo');
 			this.$footer = this.$('#footer');
 			this.$main = this.$('#main');
 			this.$list = $('#todo-list');
+
+			this.$input.hide();
 
 			this.listenTo(app.todos, 'add', this.addOne);
 			this.listenTo(app.todos, 'reset', this.addAll);
@@ -70,7 +74,7 @@ var app = app || {};
 				this.$footer.hide();
 			}
 
-			this.allCheckbox.checked = !remaining;
+			// this.allCheckbox.checked = !remaining;
 		},
 
 		// Add a single todo item to the list by creating a view for it, and
@@ -103,6 +107,17 @@ var app = app || {};
 			};
 		},
 
+		// Shows the input box on clicking the "Make a todo" button
+		showInputBox: function() {
+			this.$make.hide();
+			this.$input.show();
+			this.$input.focus();
+			var val = this.$input.val();
+			this.$input.val('');
+			this.$input.val(val);
+
+		},
+
 		// If you hit return in the main input field, create new **Todo** model,
 		// persisting it to *localStorage*.
 		createOnEnter: function (e) {
@@ -116,16 +131,16 @@ var app = app || {};
 		clearCompleted: function () {
 			_.invoke(app.todos.completed(), 'destroy');
 			return false;
-		},
-
-		toggleAllComplete: function () {
-			var completed = this.allCheckbox.checked;
-
-			app.todos.each(function (todo) {
-				todo.save({
-					completed: completed
-				});
-			});
 		}
+
+		// toggleAllComplete: function () {
+		// 	var completed = this.allCheckbox.checked;
+
+		// 	app.todos.each(function (todo) {
+		// 		todo.save({
+		// 			completed: completed
+		// 		});
+		// 	});
+		// }
 	});
 })(jQuery);
