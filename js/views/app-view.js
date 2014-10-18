@@ -21,6 +21,7 @@ var app = app || {};
 		events: {
 			'click #make-todo': 'showInputBox',
 			'keypress #new-todo': 'createOnEnter',
+			'keydown #new-todo': 'cancelOnEscape',
 			'click #clear-completed': 'clearCompleted'
 			// 'click #toggle-all': 'toggleAllComplete'
 		},
@@ -112,10 +113,10 @@ var app = app || {};
 			this.$make.hide();
 			this.$input.show();
 			this.$input.focus();
+			// Push the cursor to the end of the text
 			var val = this.$input.val();
 			this.$input.val('');
 			this.$input.val(val);
-
 		},
 
 		// If you hit return in the main input field, create new **Todo** model,
@@ -123,7 +124,17 @@ var app = app || {};
 		createOnEnter: function (e) {
 			if (e.which === ENTER_KEY && this.$input.val().trim()) {
 				app.todos.create(this.newAttributes());
+				this.$make.show();
+				this.$input.hide();
 				this.$input.val('');
+			}
+		},
+
+		// Cancels the current input of a new todo and show the default button
+		cancelOnEscape: function (e) {
+			if (e.which === ESC_KEY) {
+				this.$make.show();
+				this.$input.hide();
 			}
 		},
 
