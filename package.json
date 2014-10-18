@@ -1,0 +1,23 @@
+{
+  "name": "todo_test",
+  "version": "0.1.0",
+  "description": "A great todo app.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zamakkat/todo_test.git"
+  },
+  "author": "zamakkat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zamakkat/todo_test/issues"
+  },
+  "homepage": "https://github.com/zamakkat/todo_test",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
