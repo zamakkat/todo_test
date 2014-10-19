@@ -42,8 +42,7 @@ body {
       padding: 12px 60px 12px 15px; }
     #main #todo-list li .edit {
       width: 85%;
-      padding: 10px 17px 8px;
-      /*margin: 0px;*/
+      padding: 10px 17px 9.5px;
       font-size: 16px; }
     #main #todo-list li .destroy {
       position: absolute;
