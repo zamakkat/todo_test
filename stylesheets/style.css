@@ -40,10 +40,11 @@ body {
       font-weight: bold;
       font-size: 16px;
       padding: 12px 60px 12px 15px; }
-    #main #todo-list li .editing {
-      width: 506px;
-      padding: 5px 5px 5px 5px;
-      margin: 0 0 0 10px; }
+    #main #todo-list li .edit {
+      width: 85%;
+      padding: 10px 17px 8px;
+      /*margin: 0px;*/
+      font-size: 16px; }
     #main #todo-list li .destroy {
       position: absolute;
       top: 0;
@@ -142,20 +143,6 @@ body {
     background: rgba(0, 0, 0, 0.15);
     box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3); }
 
-/*#lists:before {
-	content: '';
-	position: absolute;
-	right: 0;
-	bottom: 31px;
-	left: 0;
-	height: 50px;
-	z-index: -1;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
-				0 6px 0 -3px rgba(255, 255, 255, 0.8),
-				0 7px 1px -3px rgba(0, 0, 0, 0.3),
-				0 43px 0 -6px rgba(255, 255, 255, 0.8),
-				0 44px 2px -6px rgba(0, 0, 0, 0.2);
-}*/
 #pages {
   color: #777;
   position: absolute;
