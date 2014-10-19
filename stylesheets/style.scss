@@ -9,6 +9,7 @@ $gutter-width: 25px;
 $toggle-width: 15px;
 
 #todoapp {
+
 	&:before {
 		position: absolute;
 		z-index: 3;
@@ -54,6 +55,10 @@ $toggle-width: 15px;
 			padding-left: $gutter-width + $toggle-width;
 			border-bottom: 1px solid #ecedef;
 
+			&:hover {
+				background: #ededed;
+			}
+
 			.view {
 				input.toggle {
 					left: 2*$gutter-width + $toggle-width;
@@ -64,6 +69,12 @@ $toggle-width: 15px;
 					font-size: 16px;
 					padding: 12px 60px 12px 15px;
 				}
+			}
+
+			.editing {
+				width: 506px;
+				padding: 5px 5px 5px 5px;
+				margin: 0 0 0 10px;
 			}
 
 			.destroy {
@@ -87,7 +98,15 @@ $toggle-width: 15px;
 		background-color: white;
 		border-radius: 3px;
 
+		/*&:hover {
+			background: #ededed;
+		}*/
+
 		#make-todo {
+			&:hover {
+				background: #fbebbf;
+			}
+
 			#pen-icon {
 				padding-right: 5px;
 				width: 12px;
@@ -120,7 +139,7 @@ $toggle-width: 15px;
 			left: 2*($gutter-width + $toggle-width);
 			width: 80%;
 			padding: 5px 5px 5px 35px;
-			border: solid 1px #ECEDEF;
+			border: solid 1px #bdbdbd;
 			border-radius: 3px;
 			background-color: white;
 			z-index: 2;

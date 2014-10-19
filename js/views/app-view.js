@@ -66,13 +66,10 @@ var app = app || {};
 				remaining: remaining
 			}));
 
-			if (app.todos.length) {
-
-				this.$('#filters li a')
-					.removeClass('selected')
-					.filter('[href="#/' + (app.TodoFilter || '') + '"]')
-					.addClass('selected');
-			}
+			this.$('#filters li a')
+				.removeClass('selected')
+				.filter('[href="#/' + (app.TodoFilter || '') + '"]')
+				.addClass('selected');
 
 			// this.allCheckbox.checked = !remaining;
 		},

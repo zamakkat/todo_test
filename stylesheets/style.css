@@ -32,12 +32,18 @@ body {
     background-color: white;
     padding-left: 40px;
     border-bottom: 1px solid #ecedef; }
+    #main #todo-list li:hover {
+      background: #ededed; }
     #main #todo-list li .view input.toggle {
       left: 65px; }
     #main #todo-list li .view label {
       font-weight: bold;
       font-size: 16px;
       padding: 12px 60px 12px 15px; }
+    #main #todo-list li .editing {
+      width: 506px;
+      padding: 5px 5px 5px 5px;
+      margin: 0 0 0 10px; }
     #main #todo-list li .destroy {
       position: absolute;
       top: 0;
@@ -53,7 +59,10 @@ body {
   #main #new-todo-area {
     height: 70px;
     background-color: white;
-    border-radius: 3px; }
+    border-radius: 3px;
+    /*&:hover {
+    	background: #ededed;
+    }*/ }
     #main #new-todo-area #make-todo {
       position: relative;
       top: 10px;
@@ -69,6 +78,8 @@ body {
       border-radius: 3px;
       z-index: 2;
       box-shadow: none; }
+      #main #new-todo-area #make-todo:hover {
+        background: #fbebbf; }
       #main #new-todo-area #make-todo #pen-icon {
         padding-right: 5px;
         width: 12px;
@@ -81,7 +92,7 @@ body {
       left: 80px;
       width: 80%;
       padding: 5px 5px 5px 35px;
-      border: solid 1px #ECEDEF;
+      border: solid 1px #bdbdbd;
       border-radius: 3px;
       background-color: white;
       z-index: 2;
