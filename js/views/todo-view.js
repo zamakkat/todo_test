@@ -148,7 +148,16 @@ var app = app || {};
 
 		// Remove the item, destroy the model from *localStorage* and delete its view.
 		clear: function () {
-			this.model.destroy();
+			this.$el.children(".view").addClass('fadeOut');
+			this.$el.addClass('slideUp');
+			var item = this;
+			setTimeout(function(){
+		        item.model.destroy();
+		    },820);
+			// _(function(){
+			//     this.model.destroy();
+			// }).defer(10);
+			
 		}
 	});
 })(jQuery);

@@ -28,7 +28,17 @@ body {
     color: #a9a9a9;
     text-decoration: line-through;
     font-weight: bold; }
+  #main #todo-list .slideUp, #main #todo-list .slideDown {
+    max-height: 0;
+    overflow-y: hidden;
+    -moz-transition: max-height 0.8s ease-in-out;
+    -o-transition: max-height 0.8s ease-in-out;
+    -webkit-transition: max-height 0.8s ease-in-out;
+    transition: max-height 0.8s ease-in-out; }
+  #main #todo-list .slideDown {
+    max-height: 50px; }
   #main #todo-list li {
+    max-height: 50px;
     background-color: white;
     padding-left: 40px;
     border-bottom: 1px solid #ecedef; }
@@ -56,13 +66,21 @@ body {
       color: #a88a8a;
       -webkit-transition: all 0.2s;
       transition: all 0.2s; }
+    #main #todo-list li .fadeOut, #main #todo-list li .fadeIn {
+      opacity: 0;
+      -moz-transition: opacity 0.8s linear;
+      -o-transition: opacity 0.8s linear;
+      -webkit-transition: opacity 0.8s linear;
+      transition: opacity 0.8s linear; }
+    #main #todo-list li .fadeIn {
+      opacity: 1; }
   #main #new-todo-area {
     height: 70px;
     background-color: white;
     border-radius: 3px;
     /*&:hover {
     	background: #ededed;
-    }*/ }
+    	}*/ }
     #main #new-todo-area #make-todo {
       position: relative;
       top: 10px;
@@ -77,16 +95,18 @@ body {
       border: solid 1px #c8bca8;
       border-radius: 3px;
       z-index: 2;
-      box-shadow: none; }
+      box-shadow: 0 3px 3px 0; }
       #main #new-todo-area #make-todo:hover {
-        background: #fbebbf; }
+        box-shadow: 0 1px 1px 0;
+        background: #fbebbf;
+        transform: translateY(2px); }
       #main #new-todo-area #make-todo #pen-icon {
         padding-right: 5px;
         width: 12px;
         height: 12px; }
     #main #new-todo-area #new-todo, #main #new-todo-area .edit {
       box-shadow: none;
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 16px; }
     #main #new-todo-area #new-todo {
       left: 80px;
